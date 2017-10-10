@@ -8,6 +8,7 @@ class RobotOnSurfaceMoveHelper {
 	private static final int ROBOT_MOVING_UNIT = 1;
 	private static final int ROBOT_MOVING_UNIT_ZERO = 0;
 
+
 	public static Robot robotOnSurfaceMove(Robot robot, TableTop surface) {
 
 		switch (robot.getPosition().getDirection()) {
