@@ -21,7 +21,7 @@ class Main {
 		String userInput;
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
-			logger.info("........WELLCOME TO THE WALKING ROBOT....");
+			logger.info("........WELCOME TO THE WALKING ROBOT....");
 			logger.info("........VALID COMMANDS ARE PLACE(eg:PLACE 2,2,NORTH)-MOVE-LEFT-RIGHT.....");
 			logger.info("........FOR EXIT TYPE DONE............");
 			userInput = scanner.nextLine();

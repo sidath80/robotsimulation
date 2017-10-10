@@ -16,7 +16,7 @@ class ActionHelper {
 	private static int x = 0;
 	private static int y = 0;
 	private static Direction direction;
-	private static Logger logger = LoggerFactory.getLogger(ActionHelper.class);
+	private static final Logger logger = LoggerFactory.getLogger(ActionHelper.class);
 
 	private static Command getCommand(String inputString, Simulation simulation) throws RuntimeException {
 
