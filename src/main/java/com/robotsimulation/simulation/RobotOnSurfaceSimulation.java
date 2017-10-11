@@ -1,9 +1,11 @@
 package com.robotsimulation.simulation;
 
+import com.robotsimulation.command.InvalidPlaceCommandException;
 import com.robotsimulation.robot.Direction;
 import com.robotsimulation.robot.Position;
 import com.robotsimulation.robot.Robot;
 import com.robotsimulation.surface.TableTop;
+
 
 public class RobotOnSurfaceSimulation implements Simulation {
 
@@ -27,22 +29,18 @@ public class RobotOnSurfaceSimulation implements Simulation {
 		return surface;
 	}
 
-	public void setSurface(TableTop surface) {
-		this.surface = surface;
-	}
-
 	private boolean isRobotMovable() {
 
 		return surface.getLength() >= robot.getPosition().getY() && surface.getWidth() >= robot.getPosition().getX();
 	}
 
-	public void place(int x, int y, Direction facing) {
+	public void place(int x, int y, Direction facing) throws RuntimeException{
 
 		Position position = new Position(x, y, facing);
 		robot.setPosition(position);
 
 		if (!isRobotMovable()) {
-			throw new SimulationException("Invalid command");
+			throw new InvalidPlaceCommandException("Invalid command");
 		}
 
 	}
@@ -63,7 +61,7 @@ public class RobotOnSurfaceSimulation implements Simulation {
 	}
 
 	public void report() {
-		System.out.println(robot.getPosition().getX() + "," + robot.getPosition().getY() + ","
+		System.out.println("Current Position : "+robot.getPosition().getX() + "," + robot.getPosition().getY() + ","
 				+ robot.getPosition().getDirection());
 
 	}

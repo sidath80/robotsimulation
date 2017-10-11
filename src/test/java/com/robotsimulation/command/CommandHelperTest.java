@@ -13,11 +13,30 @@ import org.junit.Test;
 import com.robotsimulation.simulation.Simulation;
 import com.robotsimulation.simulation.SimulationException;
 
-public class ActionHelperTest {
+public class CommandHelperTest {
 	
 	@Before
 	public void setUpList() {
-		ActionHelper.commandsList= new ArrayList<>();
+		CommandHelper.commandsList= new ArrayList<>();
+	}
+
+
+	@Test(expected = InvalidCommandException.class) // Assert
+	public void testWithBlankCommand() {
+
+		// Arrange
+		String userInput = "";
+		Robot robot = mock(Robot.class);
+		TableTop tableTop = mock(TableTop.class);
+		when(tableTop.getLength()).thenReturn(5);
+		when(tableTop.getWidth()).thenReturn(5);
+		Simulation simulation = mock(RobotOnSurfaceSimulation.class);
+		when(simulation.getSurface()).thenReturn(tableTop);
+
+		// Act
+
+		CommandHelper.onAction(userInput, simulation);
+
 	}
 	
 
@@ -35,7 +54,7 @@ public class ActionHelperTest {
 
 		// Act
 
-		ActionHelper.onAction(userInput, simulation);
+		CommandHelper.onAction(userInput, simulation);
 
 	}
 
@@ -53,7 +72,7 @@ public class ActionHelperTest {
 		when(simulation.getSurface()).thenReturn(tableTop);
 		// Act
 
-		ActionHelper.onAction(userInput, simulation);
+		CommandHelper.onAction(userInput, simulation);
 
 	}
 
@@ -70,7 +89,7 @@ public class ActionHelperTest {
 		when(simulation.getSurface()).thenReturn(tableTop);
 		// Act
 
-		ActionHelper.onAction(userInput, simulation);
+		CommandHelper.onAction(userInput, simulation);
 
 	}
 
@@ -88,7 +107,7 @@ public class ActionHelperTest {
 
 		// Act
 
-		ActionHelper.onAction(userInput, simulation);
+		CommandHelper.onAction(userInput, simulation);
 
 	}
 
@@ -104,7 +123,7 @@ public class ActionHelperTest {
 		Simulation simulation = mock(RobotOnSurfaceSimulation.class);
 		when(simulation.getSurface()).thenReturn(tableTop);
 		// Act
-		ActionHelper.onAction(userInput, simulation);
+		CommandHelper.onAction(userInput, simulation);
 
 	}
 	
@@ -120,7 +139,7 @@ public class ActionHelperTest {
 		Simulation simulation = mock(RobotOnSurfaceSimulation.class);
 		when(simulation.getSurface()).thenReturn(tableTop);
 		// Act
-		ActionHelper.onAction(userInput, simulation);
+		CommandHelper.onAction(userInput, simulation);
 
 	}
 
@@ -139,8 +158,8 @@ public class ActionHelperTest {
 		// Act
 
 		try {
-			ActionHelper.onAction(userInput, simulation);
-			ActionHelper.onAction(userInput2, simulation);
+			CommandHelper.onAction(userInput, simulation);
+			CommandHelper.onAction(userInput2, simulation);
 
 		} catch (SimulationException se) {
 			// TODO Auto-generated catch block
@@ -165,8 +184,8 @@ public class ActionHelperTest {
 		// Act
 
 		try {
-			ActionHelper.onAction(userInput, simulation);
-			ActionHelper.onAction(userInput2, simulation);
+			CommandHelper.onAction(userInput, simulation);
+			CommandHelper.onAction(userInput2, simulation);
 
 		} catch (SimulationException se) {
 			// TODO Auto-generated catch block
@@ -191,8 +210,8 @@ public class ActionHelperTest {
 		// Act
 
 		try {
-			ActionHelper.onAction(userInput, simulation);
-			ActionHelper.onAction(userInput2, simulation);
+			CommandHelper.onAction(userInput, simulation);
+			CommandHelper.onAction(userInput2, simulation);
 
 		} catch (SimulationException se) {
 			// TODO Auto-generated catch block
@@ -217,8 +236,8 @@ public class ActionHelperTest {
 		// Act
 
 		try {
-			ActionHelper.onAction(userInput, simulation);
-			ActionHelper.onAction(userInput2, simulation);
+			CommandHelper.onAction(userInput, simulation);
+			CommandHelper.onAction(userInput2, simulation);
 
 		} catch (SimulationException se) {
 			// TODO Auto-generated catch block
@@ -242,7 +261,7 @@ public class ActionHelperTest {
 		// Act
 
 		try {
-			ActionHelper.onAction(userInput, simulation);
+			CommandHelper.onAction(userInput, simulation);
 
 		} catch (SimulationException se) {
 			// TODO Auto-generated catch block
@@ -264,7 +283,7 @@ public class ActionHelperTest {
 		Simulation simulation = mock(RobotOnSurfaceSimulation.class);
 		when(simulation.getSurface()).thenReturn(tableTop);
 		// Act
-		ActionHelper.onAction(userInput, simulation);
+		CommandHelper.onAction(userInput, simulation);
 
 	}
 

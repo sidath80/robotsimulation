@@ -9,7 +9,7 @@ class RobotOnSurfaceMoveHelper {
 	private static final int ROBOT_MOVING_UNIT_ZERO = 0;
 
 
-	public static Robot robotOnSurfaceMove(Robot robot, TableTop surface) {
+	public static Robot robotOnSurfaceMove(Robot robot, TableTop surface) throws RuntimeException{
 
 		switch (robot.getPosition().getDirection()) {
 		case NORTH:

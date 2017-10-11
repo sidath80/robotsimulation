@@ -21,7 +21,7 @@ class Main {
 		TableTop surface = new TableTop(width, length);
 		Robot robot = new Robot();
 
-		Simulation simulation = new RobotOnSurfaceSimulation(robot, surface);;
+		Simulation simulation = new RobotOnSurfaceSimulation(robot, surface);
 		String userInput;
 
 		logger.info("........WELCOME TO THE WALKING ROBOT SIMULATION....");
@@ -37,7 +37,7 @@ class Main {
 			} else {
 				try {
 					
-					ActionHelper.onAction(userInput, simulation);
+					CommandHelper.onAction(userInput, simulation);
 				} catch (Exception e) {
 					logger.error(e.getMessage());
 				}
