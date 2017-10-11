@@ -22,7 +22,7 @@ implementation with JDK 1.8.
 	       RobotOnSurfaceMoveHelperTest.java : Which will run the test cases all simulation move action relate to 													the robot.
 	       RobotOnSurfaceRotateHelperTest.java : Which will run the test cases all simulation rotate action 													  														relate to the robot.
 	       
-	    2. To run the simulation, type "mvn package" and 
+	    2. To run the simulation, type "mvn clean package" and 
 	    									java -jar 	target/robotsimulation-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 		
 		3. Latest version of the code available at the 
