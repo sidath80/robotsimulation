@@ -168,6 +168,32 @@ public class CommandHelperTest {
 		}
 
 	}
+
+	@Test
+	public void testWithSuccessTwoPLACECommands() {
+
+		// Arrange
+		String userInput = "PLACE 2,2,NORTH";
+		Robot robot = mock(Robot.class);
+		TableTop tableTop = mock(TableTop.class);
+		when(tableTop.getLength()).thenReturn(5);
+		when(tableTop.getWidth()).thenReturn(5);
+		Simulation simulation = mock(RobotOnSurfaceSimulation.class);
+		String userInput2 = "PLACE 3,3,NORTH";
+		when(simulation.getSurface()).thenReturn(tableTop);
+		// Act
+
+		try {
+			CommandHelper.onAction(userInput, simulation);
+			CommandHelper.onAction(userInput2, simulation);
+
+		} catch (SimulationException se) {
+			// TODO Auto-generated catch block
+			se.printStackTrace();
+			fail("Expected an SimulationException to be thrown");// Assert
+		}
+
+	}
 	
 	@Test
 	public void testWithSuccessLEFT() {
