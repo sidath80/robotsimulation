@@ -19,8 +19,8 @@ implementation with JDK 1.8.
 	    1. To run the test, type "mvn test"
 	       
 	       ActionHelperTest.java : Which will run the test cases which covers all user input validation,
-	       RobotOnSurfaceMoveHelperTest.java : Which will run the test cases all simulation move action relate to 													the robot.
-	       RobotOnSurfaceRotateHelperTest.java : Which will run the test cases all simulation rotate action 													  														relate to the robot.
+	       RobotOnSurfaceMoveHelperTest.java : Which will run the test cases all simulation move action relate to robot.
+	       RobotOnSurfaceRotateHelperTest.java : Which will run the test cases all simulation rotate action relate to robot.
 	       
 	    2. To run the simulation, type "mvn clean package" and 
 	    									java -jar 	target/robotsimulation-0.0.1-SNAPSHOT-jar-with-dependencies.jar
