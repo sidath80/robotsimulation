@@ -17,6 +17,7 @@ class Main {
 
 		final Logger logger = LoggerFactory.getLogger(Main.class);
 
+		//create the table top with size (5,5)
 		TableTop surface = new TableTop(width, length);
 		Robot robot = new Robot();
 
@@ -39,7 +40,6 @@ class Main {
 					ActionHelper.onAction(userInput, simulation);
 				} catch (Exception e) {
 					logger.error(e.getMessage());
-					simulation= new RobotOnSurfaceSimulation(robot, surface);
 				}
 			}
 		}

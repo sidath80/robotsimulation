@@ -36,7 +36,7 @@ class ActionHelper {
 				x = Integer.parseInt(params[0]);
 				y = Integer.parseInt(params[1]);
 			}
-			commandsList.add(command);
+
 		} catch (IllegalArgumentException e) {
 			throw new InvalidCommandException("Invalid command,Valid commands are PLACE(eg:PLACE 2,2,NORTH)-MOVE-LEFT-RIGHT");
 		} catch (Exception e) {
@@ -62,10 +62,12 @@ class ActionHelper {
 				throw new InvalidCommandException("Invalid command,You should place the robot first");
 			}
 		}
+		commandsList.add(command);
 		return command;
 	}
 
 	public static void onAction(String userInput, Simulation simulation) {
+
 
 		switch (getCommand(userInput, simulation)) {
 		case PLACE:
