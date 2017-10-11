@@ -38,7 +38,7 @@ class ActionHelper {
 			}
 			commandsList.add(command);
 		} catch (IllegalArgumentException e) {
-			throw new InvalidCommandException("Invalid Direction ,Valid direction are NORTH,EAST,WEST and SOUTH only");
+			throw new InvalidCommandException("Invalid command,Valid commands are PLACE(eg:PLACE 2,2,NORTH)-MOVE-LEFT-RIGHT");
 		} catch (Exception e) {
 			throw new InvalidCommandException("Invalid command,Valid commands are PLACE(eg:PLACE 2,2,NORTH)-MOVE-LEFT-RIGHT");
 		}

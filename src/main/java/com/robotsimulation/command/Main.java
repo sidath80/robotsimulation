@@ -34,7 +34,11 @@ class Main {
 			if (userInput.equals("EXIT")) {
 				break;
 			} else {
-				ActionHelper.onAction(userInput, simulation);
+				try {
+					ActionHelper.onAction(userInput, simulation);
+				} catch (Exception e) {
+					logger.info(e.getMessage());
+				}
 			}
 		}
 		scanner.close();
